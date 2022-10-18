@@ -6,7 +6,7 @@ services:
     container_name: "db"
     # path配下のDockerfile読み込み
     build: 
-      context: .
+      context: ./docker
       dockerfile: ./docker/db.Dockerfile
     # コンテナが落ちたら再起動する
     restart: always
@@ -28,19 +28,20 @@ services:
   python3:
     restart: always
     build: 
-      context: .
+      context: ./docker
       dockerfile: ./docker/camera.Dockerfile
     container_name: 'python3'
     working_dir: '/root/src'
     tty: true
     volumes:
       - .:/root/src
+      - ./webcamera
 
   api:
     links:
       - db
     build: 
-      context: .
+      context: ./docker
       dockerfile: ./docker/api.Dockerfile
     container_name: biblio-api
     volumes:
@@ -55,7 +56,7 @@ services:
 
   front:
     build: 
-      context: .
+      context: ./docker
       dockerfile: ./docker/front.Dockerfile
     container_name: biblio-front
     volumes:
