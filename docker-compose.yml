@@ -35,7 +35,6 @@ services:
     tty: true
     volumes:
       - .:/root/src
-      - ./webcamera
 
   api:
     links:
@@ -44,8 +43,6 @@ services:
       context: ./docker
       dockerfile: ./docker/api.Dockerfile
     container_name: biblio-api
-    volumes:
-      - ./api:/api
     ports:
       - 8000:8000
     command: uvicorn custom_search:app --reload --host 0.0.0.0 --port 8000
@@ -59,8 +56,6 @@ services:
       context: ./docker
       dockerfile: ./docker/front.Dockerfile
     container_name: biblio-front
-    volumes:
-      - ./front:/front
     ports:
       - 3000:3000
     command: npm run start
