@@ -1,3 +1,7 @@
-環境を入れたら（？）、以下を実行すること
+build後に、下記の二つのコマンドを実行すること。（opencvを動かすため）
+実行する際には、下記のコマンドでコンテナに入る
+docker compose exec python3 bash
+
 apt-get update && apt-get upgrade -y
 apt-get install -y libgl1-mesa-dev
+
