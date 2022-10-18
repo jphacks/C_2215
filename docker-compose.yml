@@ -19,8 +19,6 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./mysql/initdb.d:/docker-entrypoint-initdb.d # 定義どおりにテーブル作成
-      - ./mysql/conf.d:/etc/mysql/conf.d # MySQLの基本設定(文字化け対策)
       - ./log/mysql:/var/log/mysql # ログの保存
     networks:
       - local-net
