@@ -1,0 +1,3 @@
+環境を入れたら（？）、以下を実行すること
+apt-get update && apt-get upgrade -y
+apt-get install -y libgl1-mesa-dev
