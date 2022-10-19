@@ -19,8 +19,8 @@ services:
     tty: true
 
   python3:
-    restart: always
-    build: 
+    restart: 'always'
+    build:
       context: .
       dockerfile: ./docker/camera.Dockerfile
     container_name: 'python3'
@@ -32,27 +32,30 @@ services:
   api:
     links:
       - db
-    build: 
+    build:
       context: .
       dockerfile: ./docker/api.Dockerfile
-    container_name: biblio-api
+    container_name: api
     ports:
       - 8000:8000
-    command: uvicorn custom_search:app --reload --host 0.0.0.0 --port 8000
     tty: true
+    volumes:
+    - ./api:/api
     stdin_open: true
     networks:
       - local-net
 
   front:
-    build: 
+    build:
       context: .
       dockerfile: ./docker/front.Dockerfile
-    container_name: biblio-front
+    container_name: front
     ports:
       - 3000:3000
-    command: npm run start
-    tty: true 
+    command: sh -c "cd react-project && yarn start"
+    volumes:
+    - ./front:/front/react-project
+    tty: true
     stdin_open: true
 
 networks:
@@ -63,4 +66,3 @@ volumes:
   mysql-data:
     driver: local
   code_share:
-
