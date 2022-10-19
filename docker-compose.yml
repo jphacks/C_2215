@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  # MySQL
+  db:
+    image: mysql:8.0
+    container_name: 'db'
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_USER: root
+      MYSQL_USER: user # テスト的にユーザーを作ってみる
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: 'always'
+    volumes:
+      - mysql-data:/var/lib/mysql
+    tty: true
+
+  python3:
+    restart: always
+    build: 
+      context: .
+      dockerfile: ./docker/camera.Dockerfile
+    container_name: 'python3'
+    working_dir: '/root/src'
+    tty: true
+    volumes:
+      - .:/root/src
+
+  api:
+    links:
+      - db
+    build: 
+      context: .
+      dockerfile: ./docker/api.Dockerfile
+    container_name: biblio-api
+    ports:
+      - 8000:8000
+    command: uvicorn custom_search:app --reload --host 0.0.0.0 --port 8000
+    tty: true
+    stdin_open: true
+    networks:
+      - local-net
+
+  front:
+    build: 
+      context: .
+      dockerfile: ./docker/front.Dockerfile
+    container_name: biblio-front
+    ports:
+      - 3000:3000
+    command: npm run start
+    tty: true 
+    stdin_open: true
+
+networks:
+  local-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
+  code_share:
+
