@@ -3,25 +3,20 @@ version: '3'
 services:
   # MySQL
   db:
-    container_name: "db"
-    # path配下のDockerfile読み込み
-    build: 
-      context: .
-      dockerfile: ./docker/db.Dockerfile
-    # コンテナが落ちたら再起動する
-    restart: always
-    tty: true
+    image: mysql:8.0
+    container_name: 'db'
     environment:
-      MYSQL_DATABASE: sample_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password # ユーザのパスワード
-      MYSQL_ROOT_PASSWORD: password # ルートパスワード
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_USER: root
+      MYSQL_USER: user # テスト的にユーザーを作ってみる
+      MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: 'always'
     volumes:
-      - ./log/mysql:/var/log/mysql # ログの保存
-    networks:
-      - local-net
+      - mysql-data:/var/lib/mysql
+    tty: true
 
   python3:
     restart: always
@@ -63,3 +58,9 @@ services:
 networks:
   local-net:
     driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
+  code_share:
+

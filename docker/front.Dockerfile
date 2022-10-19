@@ -1,5 +1,8 @@
 FROM node:16.13.0
 USER node
+
+#RUN mkdir /front
+#ADD . /front
 WORKDIR /front
 RUN npm install react react-dom
 RUN npm install react-scripts

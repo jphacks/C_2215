@@ -1,4 +1,6 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+#RUN mkdir /api
+#ADD . /api
 WORKDIR /api
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y libgl1-mesa-dev

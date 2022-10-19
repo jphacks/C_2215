@@ -1,6 +1,8 @@
 FROM python:3.8.13
 USER root
 
+#RUN mkdir /camera
+#ADD . /camera
 WORKDIR /camera
 
 RUN apt-get update
