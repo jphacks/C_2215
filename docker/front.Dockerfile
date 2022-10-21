@@ -5,3 +5,4 @@ WORKDIR /front/react-project
 RUN npm install -g create-react-app
 RUN npm install --save react-router-dom
 RUN npm install --save prop-types
+RUN npm install --save react-modal

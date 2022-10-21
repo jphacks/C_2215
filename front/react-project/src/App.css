@@ -4,13 +4,13 @@
 }
 
 .card-box {
-  background-color: #8491a5;
+  background: #D9D9D9;
   width: 65%;
   float: left;
 }
 
 .card-shop {
-  background-color: #8491a5;
+  background: #A0A0A0;
   width: 35%;
   float: left;
 }
@@ -19,37 +19,177 @@
   text-decoration: underline;
 }
 
+/* modal.css */
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-inner {
+  position: absolute;
+  top: 12%;
+  right: 0;
+  left: 0;
+  width: 480px;
+  padding-bottom: 60px;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+.modal-header {
+  height: 10px;
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 8px 8px 0 0;
+  background-color: bisque;
+  text-align: center;
+
+}
+
+.modal-introduction h2 {
+  color: #5876a3;
+  text-align: center;
+
+}
+
+.modal-introduction p {
+  color: #5876a3;
+  width: 384px;
+  line-height: 32px;
+  text-align: center;
+  margin: 36px auto 40px;
+}
+
+.modal-close-btn {
+  font-size: 13px;
+  color: #8491a5;
+  width: 200px;
+  padding: 16px 0;
+  border: 0;
+  background-color: #f0f4f9;
+  cursor: pointer;
+  margin-left: 140px;
+}
+.modalContent {
+  background: "white";
+  padding: "10px";
+  border-radius: "3px";
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
 .order-box {
-  background-color: #999;
+  background: #D9D9D9;
   width: 34%;
   height: 100%;
   float: right;
   text-align: justify;
 }
+.overlay-base {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition-property: background-color, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.overlay-after {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+
+.overlay-before {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+.content-base {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0%;
+  width: 0%;
+  background-color: transparent;
+  transition-property: background-color, width, height;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.content-after {
+  width: 70%;
+  height: 40%;
+  background-color: rgba(250, 190, 190, 0.8);
+}
+
+.content-before {
+  width: 0%;
+  height: 0%;
+  background-color: transparent;
+}
+
+.language-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  margin: auto;
+  height: auto;
+  width: 60%;
+}
 .submit-button {
   margin: 3%;
-  background-color: #0a458a;
+  border: none;
+  background: #717171;
   width: 85%;
   height: 100%;
   color: #FFFFFF;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 0 0 25% 25%;
 }
 
 .shop-rogo {
   text-align: center;
   width: 90%;
-  background-color: #78d461;
+  background: #D9D9D9;
   margin: 2%;
   margin-top: 3%;
 }
 
 .occupancy {
-  background-color: #282c34;
+  color: #fff;
+  background: #5B5B5B;
   width: 64%;
-  height: 90%;
+  /* height: 90%; */
   margin: auto;
   float: right;
 }
@@ -111,7 +251,8 @@
 }
 
 .order-index {
-  border-bottom: 0.5vw solid #b1c0c0;
+  color: #000;
+  border-bottom: 0.5vw solid #000;
   font-size: large;
   font-weight: bold;
   margin-left: 2%;
@@ -119,7 +260,8 @@
 }
 
 .boder-line {
-  border-bottom: 0.2vw solid #ddd;
+  color: #000;
+  border-bottom: 0.2vw solid #000;
   margin-left: 2%;
   margin-right: 2%;
 }
