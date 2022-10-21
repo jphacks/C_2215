@@ -1,3 +1,22 @@
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Register from "./Register";
+import Routers from "./Routers";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path={`/`} element={<Home />} />
+        <Route path={`/register/`} element={<Register />} />
+        <Route path={`/routers/`} element={<Routers />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
 // import './componens/order.js'
 // import './App.css';
 // import './styl.css';
@@ -13,6 +32,38 @@
 //   // const numList = [1,2,3]
 //   // const textList = [{name: "予定", per: "現状"}]
 //   const itemList = ["混ぜ技", "ノドグロ", "辛味噌", "つけ麺", "から揚げ"]
+// import './componens/order-footer.js'
+// import './App.css';
+// import './styl.css';
+// import SubmitButton from './componens/submit.js';
+// import ShopRogo from './componens/shop-rogo.js';
+// import Occupancy from './componens/occupancy.js';
+// import OrderCard from './componens/order-card';
+// import ItemOrder from './componens/order-item.js';
+// import OrderHeader from './componens/order-header.js';
+// import OrderFooter from './componens/order-footer.js';
+// import ModalBox from './componens/modal.js';
+// import ModalBox from './componens/modal.js';
+
+// function App() {
+//   const itemList = ["混ぜ技", "ノドグロ", "辛味噌", "つけ麺", "から揚げ"]
+//   const cardList = [
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//     {name:"ラーメン", price: 100},
+//   ]
+  // const [selectedItem, setSelectedItem] = useState ('')
+  // const onOpenDialog = (name) => {
+  //   setSelectedItem(name)
+  // }
+
+  // const onCloseDialog = () => {
+  //   setSelectedItem('')
+  // }
 
 //   return (
 //     <div>
@@ -48,22 +99,111 @@
 // }
 // export default App;
 
+// =======
+//     <div>
+//       <div className='card-box'>
+//         <div>
+//           {cardList.map((card)=>{
+//             return (
+//               <OrderCard name={card.name} price={card.price}/>
+//             )
+//           })}
+//           {/* <OrderCard name="test" price="100"/>
+//           <OrderCard name="ラーメン" price="777777" />
+//           <OrderCard />
+//           <OrderCard />
+//           <OrderCard />
+//           <OrderCard />
+//           <OrderCard />
+//           <OrderCard /> */}
+//         </div>
+//       </div>
+//       <div className='order-box'>
+//         <OrderHeader name="注文リスト" />
+//         {itemList.map((item) => {
+//           return (
+//             <ItemOrder name={item} />
+//           )
+//         })}
+//         <OrderFooter name="合計 " item={itemList.length} price="000" />
+//         <div className='card-shop'>
+//           <SubmitButton />
+//           <ShopRogo/>
+//         </div>
+//         <Occupancy/>
+//       </div>
+//     </div>
+//     );
+//   }
+// export default App;
+    // <div card-list>
+    //   <div>
+    //     {/* <MixBox></MixBox> */}
+    //     {/* <Meter /> */}
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //     <LinkButton />
+    //   </div>
+    // </div>
+    // // <div className="App">
+    // //   <div className='container'>
+    //     {/* <div className='sort'>
+    //       <div className='example4'>
+    //         {textList.map((text) => {
+    //           return (
+    //             <Meter
+    //             />
+    //           )
+    //         })}
+    //       </div> */}
+    //       {/* <h1>{title}</h1>
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Register from "./Register";
-import Routers from "./Routers";
+    //       <div className='circle'>{numList}
+    //         {numList.map((num)=>{
+    //             return <p>{num}</p>
+    //           })}
+    //         </div>
+    //         <LinkButton text="ボタン" link="/test" />
+    //         <div className='card'> */}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={`/`} element={<Home />} />
-        <Route path={`/register/`} element={<Register />} />
-        <Route path={`/routers/`} element={<Routers />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
 
-export default App;
+
+
+
+
+
+// import logo from './logo.svg';
+// import './App.css';
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
