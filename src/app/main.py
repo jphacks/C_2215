@@ -27,7 +27,7 @@ def get_item(_id: int):
     :param _id:
     :return:
     """
-    item = session.query(ItemsTable).filter(ItemsTable.id == _id).first()
+    item = session.query(ItemsTable).filter(ItemsTable.photo_id == _id).first()
     return item
 
 @app.post("/items")
@@ -54,12 +54,12 @@ def update_item(item: ItemCreate, _id: int):
     :return:
     """
     target_item: ItemsTable = session.query(ItemsTable) \
-        .filter(ItemsTable.id == _id) \
+        .filter(ItemsTable.photo_id == _id) \
         .first()
     target_item.item_name = item.item_name
     session.commit()
     new_item = session.query(ItemsTable) \
-        .filter(ItemsTable.id == _id) \
+        .filter(ItemsTable.photo_id == _id) \
         .first()
     return new_item
 
@@ -69,7 +69,7 @@ def delete_item(_id: int):
     delete item.
     :return: 
     """
-    item = session.query(ItemsTable).filter(ItemsTable.id == _id).first()
+    item = session.query(ItemsTable).filter(ItemsTable.photo_id == _id).first()
     session.delete(item)
     session.commit()
     return item
