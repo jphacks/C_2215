@@ -52,6 +52,22 @@ class App extends React.Component {
       {
         id:'8',
         percent:'90'
+      },
+      {
+        id:'9',
+        percent:'55'
+      },
+      {
+        id:'10',
+        percent:'20'
+      },
+      {
+        id:'11',
+        percent:'89'
+      },
+      {
+        id:'12',
+        percent:'44'
       }
     ]
   return (

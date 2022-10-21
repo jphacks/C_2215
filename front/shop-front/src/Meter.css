@@ -14,9 +14,10 @@
    
 .box {
     position: relative;
+    margin-bottom: 15px;
     min-width: 220px;
     width: 33.3333333333%;
-    height: 300px;
+    height: 280px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -30,7 +31,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: #fff;
+    background: #b28c62;
     -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
@@ -54,6 +55,7 @@
     position: relative;
     width: 150px;
     height: 150px;
+    margin-bottom: 20px;
 }
 .box .percent svg {
     position: relative;
@@ -95,16 +97,15 @@
     font-size: 22px;
 }
 .box .text {
-    padding: 10px 0 0;
     text-align: center;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 30px;
 }
 .box .percent .line {
     -webkit-animation: circleAnim 1s forwards;
             animation: circleAnim 1s forwards;
             stroke-dashoffset: 52.8;
-            stroke: #03a9f4;
+            stroke: #ff8c00;
            
 }
    

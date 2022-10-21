@@ -11,6 +11,7 @@ class Meter extends React.Component {
             <div id="pie-chart" class="content">
                 <div class="pie-chart-wrap">
                 <div class="box">
+                <p class="text">desk {this.props.id}</p>
                     <div class="percent">
                     <svg>
                         <circle class="base" cx="75" cy="75" r="70"></circle>
@@ -19,7 +20,6 @@ class Meter extends React.Component {
                     <div class="number">
                         <h3 class="title">{this.props.percent}<span>%</span></h3>
                     </div>
-                    <p class="text">Graph {this.props.id}</p>
                     </div>
                 </div>
                 </div>
