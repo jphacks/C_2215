@@ -1,5 +1,91 @@
 .App {
   text-align: center;
+  position: flex;
+}
+
+.card-box {
+  background-color: #8491a5;
+  width: 65%;
+  float: left;
+}
+
+.card-shop {
+  background-color: #8491a5;
+  width: 35%;
+  float: left;
+}
+
+.text-deco {
+  text-decoration: underline;
+}
+
+.order-box {
+  background-color: #999;
+  width: 34%;
+  height: 100%;
+  float: right;
+  text-align: justify;
+}
+
+.submit-button {
+  margin: 3%;
+  background-color: #0a458a;
+  width: 85%;
+  height: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 0 0 25% 25%;
+}
+
+.shop-rogo {
+  text-align: center;
+  width: 90%;
+  background-color: #78d461;
+  margin: 2%;
+  margin-top: 3%;
+}
+
+.occupancy {
+  background-color: #282c34;
+  width: 64%;
+  height: 90%;
+  margin: auto;
+  float: right;
+}
+
+.meter {
+  border: 5px solid #333;
+  height: 20%;
+  width: 10%;
+  background: #999;
+  display: flex;
+  align-items: flex-end;
+}
+
+.meter div {
+  width: 100%;
+  background: #78d461;
+}
+
+.card-list {
+  color: #78d461;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-list div {
+  flex: auto;
+  width: 25%;
+}
+
+.sort {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 60%;
+  margin: 30px 0;
+  padding-top: 30px;
 }
 
 .App-logo {
@@ -24,15 +110,250 @@
   color: white;
 }
 
+.order-index {
+  border-bottom: 0.5vw solid #b1c0c0;
+  font-size: large;
+  font-weight: bold;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.boder-line {
+  border-bottom: 0.2vw solid #ddd;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.circle {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: skyblue;
+  text-align: center;
+  line-height: 80px;
+}
+
+.box-box {
+  display: inline-block;
+  margin-right: 1em;
+  width: 400px;
+  padding: 1em;
+  background-color: white;
+  box-shadow: 3px 3px 4px #546E7A;
+}
+
+/* display: inline-block;
+  color: #8491a5;
+  width: 10%;
+  height: 12%;
+} */
+.sort {
+  /* width: 80%;
+  margin: 15%; */
+  padding: auto;
+  position: absolute;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next";
+  min-width: 1280px;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: "Avenir Next";
+  font-size: 56px;
+  font-weight: 400;
+  color: #0bc8b6;
+}
+
+h2,
+h3 {
+  font-family: "Lato";
+  color: #2b546a;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+h3 {
+  font-size: 20px;
+  border-bottom: 1px solid #e1e6ec;
+  line-height: 64px;
+  margin-bottom: 40px;
+}
+
+.header {
+  height: 60px;
+  border-bottom: 1px solid #eee;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: skyblue;
+  /*背景色*/
+}
+
+.header-logo {
+  height: 60px;
+  width: 60px;
+  background-color: #2b546a;
+  float: left;
+  text-align: center;
+}
+
+.header-logo img {
+  width: 28px;
+  padding-top: 16px;
+}
+
+.main-wrapper {
+  background-color: #f4fafa;
+}
+
+.main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+.container {
+  position: flex;
+  margin: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.lesson-card {
+  display: inline-block;
+  width: 22.5%;
+  margin-right: 24px;
+  text-align: center;
+  box-shadow: 0 0 6px #e8e8e8;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.lesson-item {
+  border-radius: 4px;
+  padding: 48px 0 64px;
+}
+
+.lesson-item img {
+  width: 126px;
+}
+
+.lesson-item p {
+  color: #2b546a;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-inner {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  left: 0;
+  width: 480px;
+  padding-bottom: 60px;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+.modal-header {
+  height: 8px;
+  width: 100%;
+  margin-bottom: 60px;
+  border-radius: 8px 8px 0 0;
+  background-image: url("https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/modal_bar.svg");
+}
+
+.modal-introduction p {
+  color: #5876a3;
+  width: 384px;
+  line-height: 32px;
+  text-align: left;
+  margin: 36px auto 40px;
+}
+
+.modal-close-btn {
+  font-size: 13px;
+  color: #8491a5;
+  width: 200px;
+  padding: 16px 0;
+  border: 0;
+  background-color: #f0f4f9;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  color: #8491a5;
+  background-color: #ccd9ea;
+  transition: .3s ease-in-out;
+}
+
+.footer {
+  padding: 80px 0;
+}
+
+.footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: inline-block;
+}
+
+.footer-logo img {
+  height: 20px;
+}
+
+.footer-logo p {
+  color: #b1c0c0;
+  font-size: 12px;
+}
+
+.footer-inner ul {
+  float: right;
+}
+
+.footer-inner li {
+  color: #2b546a;
+  display: inline-block;
+  padding-left: 16px;
 }
