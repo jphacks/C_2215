@@ -8,23 +8,46 @@ import OrderCard from './componens/order-card';
 import ItemOrder from './componens/order-item.js';
 import OrderHeader from './componens/order-header.js';
 import OrderFooter from './componens/order-footer.js';
-// import Modal from './componens/modal.js';
+// import ModalBox from './componens/modal.js';
+// import ModalBox from './componens/modal.js';
 
 function App() {
   const itemList = ["混ぜ技", "ノドグロ", "辛味噌", "つけ麺", "から揚げ"]
+  const cardList = [
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+    {name:"ラーメン", price: 100},
+  ]
+  // const [selectedItem, setSelectedItem] = useState ('')
+  // const onOpenDialog = (name) => {
+  //   setSelectedItem(name)
+  // }
+
+  // const onCloseDialog = () => {
+  //   setSelectedItem('')
+  // }
 
   return (
     <div>
       <div className='card-box'>
         <div>
-          <OrderCard name="test" price="100"/>
+          {cardList.map((card)=>{
+            return (
+              <OrderCard name={card.name} price={card.price}/>
+            )
+          })}
+          {/* <OrderCard name="test" price="100"/>
           <OrderCard name="ラーメン" price="777777" />
           <OrderCard />
           <OrderCard />
           <OrderCard />
           <OrderCard />
           <OrderCard />
-          <OrderCard />
+          <OrderCard /> */}
         </div>
       </div>
       <div className='order-box'>
@@ -42,6 +65,9 @@ function App() {
         <Occupancy/>
       </div>
     </div>
+    );
+  }
+export default App;
     // <div card-list>
     //   <div>
     //     {/* <MixBox></MixBox> */}
@@ -82,10 +108,7 @@ function App() {
     //     </div>
     //   </div>
     // </div>
-  );
-}
 
-export default App;
 
 
 
