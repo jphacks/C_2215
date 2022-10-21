@@ -1,3 +1,7 @@
+:root {
+   --number: 0;
+}
+
 @media screen and (min-width: 940px) {
     .pie-chart-wrap {
       display: -webkit-box;
@@ -104,7 +108,8 @@
 .box .percent .line {
     -webkit-animation: circleAnim 1s forwards;
             animation: circleAnim 1s forwards;
-            stroke-dashoffset: 52.8;
+            stroke-dashoffset: calc(440 - (440 * 50) / 100);
+            /*stroke-dashoffset: calc(440 - (440 * var(--number)) / 100);*/
             stroke: #ff8c00;
            
 }

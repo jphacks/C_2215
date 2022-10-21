@@ -49,7 +49,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/front.Dockerfile
-    container_name: front
+    container_name: front2
     ports:
       - 3000:3000
     command: sh -c "cd shop-front && yarn start"

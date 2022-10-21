@@ -7,6 +7,9 @@ class Meter extends React.Component {
     }
     
     render() {
+        //var a 
+        //a = (this.state.ary);
+        //document.documentElement.style.setProperty('--number','a');
         return(
             <div id="pie-chart" class="content">
                 <div class="pie-chart-wrap">
