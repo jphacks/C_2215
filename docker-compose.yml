@@ -52,9 +52,9 @@ services:
     container_name: front
     ports:
       - 3000:3000
-    command: sh -c "cd react-project && yarn start"
+    command: sh -c "cd shop-front && yarn start"
     volumes:
-    - ./front:/front/react-project
+    - ./front:/front/shop-front
     tty: true
     stdin_open: true
 
