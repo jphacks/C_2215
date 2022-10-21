@@ -1,27 +1,29 @@
-CREATE TABLE fastapi.items
+CREATE TABLE dish_dining.photo_info
 (
-    id INT NOT NULL
-    AUTO_INCREMENT,
-    item_name text NOT NULL,
+    photo_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    photo_per int(11),
+    photo_info VARCHAR(16000),
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON
-    UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY
-    (id)
+    UPDATE CURRENT_TIMESTAMP
 );
 
+
+
+--photo_img LONGBLOB,
+
 -- サンプルレコード作成
-INSERT INTO fastapi.items
+INSERT INTO dish_dining.photo_info
     ( -- columns to insert data into
-    item_name
+    photo_per
     )
 VALUES
     ( -- first row: values for the columns in the list above
-        'item1'
+        30
 ),
     ( -- second row: values for the columns in the list above
-        'item2'
+        50
 ),
     ( -- third row: values for the columns in the list above
-        'item3'
+        80
 );
