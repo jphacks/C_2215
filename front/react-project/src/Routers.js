@@ -12,8 +12,6 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import OrderFooter from './components/order-footer.js'
 import OrderHeader from './components/order-header.js';
-import Occupancy from './components/occupancy.js';
-import Data from './components/data.js';
 
 function Routers() {
   const itemList = ["混ぜ技", "ノドグロ", "辛味噌", "つけ麺", "から揚げ"]
@@ -62,7 +60,7 @@ function Routers() {
           <SubmitButton />
           <ShopRogo />
         </div>
-        <Occupancy/>
+        <Occupancy />
       </div>
     </div>
   );
