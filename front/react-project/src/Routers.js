@@ -1,16 +1,3 @@
-// import { useNavigate } from "react-router-dom"
-
-// const Routers = () => {
-//     const navigate = useNavigate()
-//     return (
-//         <div>
-//             <p>注文画面</p>
-//             <button onClick={() => navigate('/submit')}>注文画面へ</button>
-//         </div>
-//     )
-// }
-// export default Routers
-
 import './App.css';
 import './styl.css';
 import SubmitButton from './components/submit.js';
@@ -23,14 +10,13 @@ import Data4 from './components/data4.js';
 import ItemOrder from './components/order-item.js';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import OrderFooter from './components/order-footer.js'
+import OrderHeader from './components/order-header.js';
+import Occupancy from './components/occupancy.js';
+import Data from './components/data.js';
 
 function Routers() {
-  // const title = "Hello World!";
-  // const numList = [1,2,3]
-  // const textList = [{name: "予定", per: "現状"}]
   const itemList = ["混ぜ技", "ノドグロ", "辛味噌", "つけ麺", "から揚げ"]
-  // const languageList = Data.languageList;
-
   return (
     <div>
       <div className='card-box'>
@@ -65,15 +51,16 @@ function Routers() {
         </Tabs>
       </div>
       <div className='order-box'>
-        {/* <OrderCard /> */}
+        <OrderHeader name="注文リスト" />
         {itemList.map((item) => {
           return (
             <ItemOrder name={item} />
           )
         })}
+        <OrderFooter />
         <div className='card-shop'>
           <SubmitButton />
-          <ShopRogo/>
+          <ShopRogo />
         </div>
         <Occupancy/>
       </div>

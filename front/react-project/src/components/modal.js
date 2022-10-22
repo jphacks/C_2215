@@ -20,123 +20,31 @@ class ModalBox extends React.Component {
               <div className='modal-header'></div>
                 <div className='modal-introduction'>
                   <h2>{this.props.name}</h2>
-                    <p>{this.props.introduction}</p>
+                    <p>{this.props.price}</p>
                 </div>
+                <div className="btn-com">
                 <button className='modal-close-btn'
                   onClick={() => this.handleClickClose()}
                 >
                   とじる
                 </button>
+                  <button className="modal-add-btn">+</button>
+                  <button className="modal-rm-btn">-</button>
+                </div>
             </div>
           </div>
         );
     }
         return (
-            <div className='modal-box'>
-                <div
-                    onClick={() => { this.handleClickOrder() }}
-                >
-                  <p>注文する</p>
-                    {/* <b>aaaaaaaaaaaa<br/>aaaaaaaaaaaa<br/>aaaaaaaaaaaa<br/>
-                       aaaaaaaaaaaa
-                    </b> */}
-                    {/* <img src={this.props.image} /> */}
-                </div>
-                {modal}
+          <div>
+            <div onClick={() => { this.handleClickOrder() }} >
+              <div className='modal-box'>
+                <p>注文する</p>
+              </div>
             </div>
+            {modal}
+          </div>
         );
     }
 }
-
 export default ModalBox;
-
-// // import React, { useState } from "react";
-// // import "./App.css";
-// import Modal from "react-modal";
-
-// // Modal.setAppElement("#root");
-
-// class ModalBox extends React.Component() {
-//     render(){
-//       const [modalIsOpen, setIsOpen] = React.useState(false);
-//       return (
-//           <div className="App">
-//               <button onClick={() => setIsOpen(true)}>Open Modal</button>
-//               <Modal
-//                   isOpen={modalIsOpen}
-//                   onRequestClose={() => setIsOpen(false)}
-//                   overlayClassName={{
-//                       base: "overlay-base",
-//                       afterOpen: "overlay-after",
-//                       beforeClose: "overlay-before"
-//                   }}
-//                   className={{
-//                       base: "content-base",
-//                       afterOpen: "content-after",
-//                       beforeClose: "content-before"
-//                   }}
-//                   closeTimeoutMS={500}
-//               >
-//                   <button onClick={() => setIsOpen(false)}>Close Modal</button>
-//               </Modal>
-//           </div>
-//       );
-//   }
-
-// }
-// export default ModalBox;
-
-
-
-// // // // MyComponents.js
-// // // import React, { useEffect, useCallback, useState } from 'react';
-
-
-// // // // 子コンポーネント（モーダル）
-// // // function Modal(props) {
-
-// // //     return (
-// // //         <div id="modal" className="modal" onClick={(event) => { event.stopPropagation() }}>
-// // //             <div>
-// // //                 <p>モーダル</p>
-// // //                 <button onClick={props.onClick}>閉じるボタン</button>
-// // //             </div>
-// // //         </div>
-// // //     )
-// // // }
-
-
-// // // // 親コンポーネント
-// // // export default function Modal_FunctionComponent() {
-
-// // //     const [isModalOpen, setIsModalOpen] = useState(false)
-
-// // //     const closeModal = useCallback(() => {
-// // //         setIsModalOpen(false)
-// // //         document.removeEventListener('click', closeModal)
-// // //     }, [])
-
-// // //     useEffect(() => {
-// // //         return () => {
-// // //             document.removeEventListener('click', closeModal)
-// // //         }
-// // //     }, [closeModal])
-
-
-// // //     function openModal(event) {
-// // //         setIsModalOpen(true)
-// // //         document.addEventListener('click', closeModal)
-// // //         event.stopPropagation()
-// // //     }
-
-
-// // //     return (
-// // //         <div className="modalpage">
-// // //             <h2>関数コンポーネント</h2>
-// // //             <button onClick={(event) => { openModal(event) }}>モーダルを開く</button>
-
-// // //             {isModalOpen ? <Modal onClick={(event) => { closeModal(event) }} /> : ""}
-
-// // //         </div>
-// // //     );
-// // // }
