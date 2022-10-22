@@ -27,6 +27,14 @@
   left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.modal-box {
+  position: absolute;
+  background-color: #61dafb;
+  width: 30%;
+  height: 20%;
+  margin: 0 auto;
 }
 
 .modal-inner {
@@ -35,8 +43,6 @@
   right: 0;
   left: 0;
   width: 480px;
-  padding-bottom: 60px;
-  margin: auto;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
 }
@@ -65,18 +71,46 @@
 }
 
 .modal-close-btn {
-  font-size: 13px;
-  color: #8491a5;
-  width: 200px;
-  padding: 16px 0;
-  border: 0;
   background-color: #f0f4f9;
+  font-size: 24px;
+  color: #8491a5;
+  width: 5%;
+  padding: 5% 5%;
+  border: 0;
   cursor: pointer;
-  margin-left: 140px;
+  margin: 0 2%;
+}
+.modal-add-btn {
+  float: right;
+  font-size: 24px;
+  color: #000;
+  height: 10%;
+  width: 15%;
+  padding: 5% 5%;
+  margin: 0 3%;
+  border: 0;
+  background-color: red;
+  cursor: pointer;
+}
+.modal-rm-btn {
+  float: right;
+  font-size: 24px;
+  color: #000;
+  height: 10%;
+  width: 15%;
+  padding: 5% 5%;
+  border: 0;
+  background-color: #61dafb;
+  cursor: pointer;
+}
+.btn-com {
+  right: 0;
+  margin-bottom: 0;
+
 }
 .modalContent {
   background: "white";
-  padding: "10px";
+  padding: "10";
   border-radius: "3px";
 }
 .overlay {
