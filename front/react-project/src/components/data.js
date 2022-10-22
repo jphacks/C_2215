@@ -1,9 +1,9 @@
 import React from 'react';
-import OrderCard from './link_button';
+import OrderCard from './order-card.js';
+// import modal from './modal.js';
 
 class Data extends React.Component {
   render() {
-    // 指定されたコードを貼り付けてください
     const languageList = [
       {
         name: 'カルビ',
@@ -61,25 +61,24 @@ class Data extends React.Component {
         price:'300円'
       },
     ];
-
     return (
       <div>
         <h1>メニュー 一覧</h1>
         <div>
-            {languageList.map((languageItem) => {
-                return (
-                  // Languageコンポーネントを呼び出し、その中でpropsを渡してください
+          {languageList.map((languageItem) => {
+              return (
+                <div>
                   <OrderCard
                   name={languageItem.name}
                   image={languageItem.image}
                   price={languageItem.price}
                   />
-                )
+                </div>
+              )
             })}
         </div>
       </div>
     );
   }
 }
-
 export default Data;
