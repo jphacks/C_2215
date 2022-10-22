@@ -57,6 +57,19 @@ services:
     networks:
       - local-net
 
+  front:
+    build:
+      context: .
+      dockerfile: ./docker/front.Dockerfile
+    container_name: front
+    ports:
+      - 3000:3000
+    command: sh -c "cd react-project && yarn start"
+    volumes:
+    - ./front:/front/react-project
+    tty: true
+    stdin_open: true
+
   front2:
     build:
       context: .
