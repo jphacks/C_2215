@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <h1>ホーム</h1>
       <div>
-        <h1><Link to={`/register/`}>登録（店員画面になる予定）</Link><br/></h1>
+        <h1><a href="http://localhost:3001/">店員画面</a></h1>
         <h1><Link to={`/routers/`}>注文画面</Link></h1>
       </div>
     </>

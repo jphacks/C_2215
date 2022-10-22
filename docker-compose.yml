@@ -3,20 +3,32 @@ version: '3'
 services:
   # MySQL
   db:
-    image: mysql:8.0
-    container_name: 'db'
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_ROOT_USER: root
-      MYSQL_USER: user # テスト的にユーザーを作ってみる
-      MYSQL_PASSWORD: password
+    image: mysql:oracle
+    container_name: fastapi_mysql
     ports:
-      - "3306:3306"
-    command: --default-authentication-plugin=mysql_native_password
-    restart: 'always'
+      - 3306:3306
     volumes:
-      - mysql-data:/var/lib/mysql
-    tty: true
+      - ./mysql/conf/my.conf:/etc/mysql/conf.d/my.cnf
+      - ./mysql/store:/var/lib/mysql
+      - ./mysql/db:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=fastapi
+      - MYSQL_PASSWORD=passw0rd
+      - MYSQL_DATABASE=fastapi
+      - TZ=Asia/Tokyo
+    restart: always
+
+  api2:
+    build: ./src
+    container_name: api2
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - 'db'
+    environment:
+      - TZ=Asia/Tokyo
 
   python3:
     restart: 'always'
@@ -55,6 +67,19 @@ services:
     command: sh -c "cd react-project && yarn start"
     volumes:
     - ./front:/front/react-project
+    tty: true
+    stdin_open: true
+
+  front2:
+    build:
+      context: .
+      dockerfile: ./docker/front2.Dockerfile
+    container_name: front2
+    ports:
+      - 3001:3001
+    command: sh -c "cd shop-front && yarn start"
+    volumes:
+    - ./front:/front/shop-front
     tty: true
     stdin_open: true
 
