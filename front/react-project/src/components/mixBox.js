@@ -1,5 +1,5 @@
 import React from "react";
-import LinkButton from "./link_button";
+import LinkButton from "./order-card";
 import Meter from "./metare";
 
 class MixBox extends React.Component {
