@@ -13,7 +13,7 @@ password = 'passw0rd'
 
 uri = f'mysql://{user}:{password}@{host}:{port}/{db_name}?charset=utf8'
 engine = create_engine(uri, encoding='utf8', echo=True)
-
+SessionLocal = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 session = scoped_session(
     sessionmaker(
         autocommit=False,

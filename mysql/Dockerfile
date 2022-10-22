@@ -1,10 +1,10 @@
 FROM mysql:latest
 
-ENV MYSQL_DATABASE sample_db
-ENV MYSQL_USER sample_user
-ENV MYSQL_PASSWORD sample_password
+ENV MYSQL_DATABASE fastapi
+ENV MYSQL_USER fastapi
+ENV MYSQL_PASSWORD passw0rd
 ENV TZ "Asia/Tokyo"
-ENV MYSQL_ROOT_PASSWORD p@assw0rd
+ENV MYSQL_ROOT_PASSWORD root
 
 
 COPY ./init.sql /docker-entrypoint-initdb.d/init.sql

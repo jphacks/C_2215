@@ -63,7 +63,7 @@ services:
       dockerfile: ./docker/front.Dockerfile
     container_name: front
     ports:
-      - 3000:3000
+      - 3001:3001
     command: sh -c "cd react-project && yarn start"
     volumes:
     - ./front:/front/react-project

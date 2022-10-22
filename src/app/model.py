@@ -14,10 +14,10 @@ class ItemsTable(base):
     table.
     """
     __tablename__ = 'items'
-    photo_id = Column(Integer, primary_key=True, autoincrement=True)
-    item_name = Column(Text, nullable=False)
-    created_at = Column(DATETIME, FetchedValue())
-    updated_at = Column(DATETIME, FetchedValue())
+    photo_id = Column('photo_id', Integer, primary_key=True, autoincrement=True)
+    photo_per = Column('photo_per', Integer)
+    created_at = Column('created_at', DATETIME, FetchedValue())
+    updated_at = Column('updated_at', DATETIME, FetchedValue())
 
 
 class Item(BaseModel):
@@ -25,7 +25,7 @@ class Item(BaseModel):
     Item model.
     """
     photo_id: int
-    item_name: str
+    photo_per: int
     created_at: datetime
     updated_at: datetime
 
@@ -34,4 +34,4 @@ class ItemCreate(BaseModel):
     """
     Item create
     """
-    item_name: str
+    photo_per: int
