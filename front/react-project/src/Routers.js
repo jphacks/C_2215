@@ -11,15 +11,18 @@
 // }
 // export default Routers
 
-import './componens/order.js'
 import './App.css';
 import './styl.css';
-import Order from './componens/order.js';
-import SubmitButton from './componens/submit.js';
-import ShopRogo from './componens/shop-rogo.js';
-import Occupancy from './componens/occupancy.js';
-import Data from './componens/data.js';
-import ItemOrder from './componens/order-item.js';
+import SubmitButton from './components/submit.js';
+import ShopRogo from './components/shop-rogo.js';
+import Occupancy from './components/occupancy.js';
+import Data1 from './components/data1.js';
+import Data2 from './components/data2.js';
+import Data3 from './components/data3.js';
+import Data4 from './components/data4.js';
+import ItemOrder from './components/order-item.js';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 function Routers() {
   // const title = "Hello World!";
@@ -31,12 +34,38 @@ function Routers() {
   return (
     <div>
       <div className='card-box'>
-        <div card-list>
-          <Data/>
-        </div>
+        <Tabs>
+          <TabList>
+            <Tab>肉</Tab>
+            <Tab>海鮮・野菜</Tab>
+            <Tab>逸品・ご飯</Tab>
+            <Tab>デザート</Tab>
+          </TabList>
+
+          <TabPanel>
+            <div card-list>
+              <Data1/>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div card-list>
+              <Data2/>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div card-list>
+              <Data3/>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div card-list>
+              <Data4/>
+            </div>
+          </TabPanel>
+        </Tabs>
       </div>
       <div className='order-box'>
-        <Order />
+        {/* <OrderCard /> */}
         {itemList.map((item) => {
           return (
             <ItemOrder name={item} />

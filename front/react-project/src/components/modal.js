@@ -32,11 +32,14 @@ class ModalBox extends React.Component {
         );
     }
         return (
-            <div className='card-box'>
+            <div className='modal-box'>
                 <div
                     onClick={() => { this.handleClickOrder() }}
                 >
-                    <p>aaa</p>
+                  <p>注文する</p>
+                    {/* <b>aaaaaaaaaaaa<br/>aaaaaaaaaaaa<br/>aaaaaaaaaaaa<br/>
+                       aaaaaaaaaaaa
+                    </b> */}
                     {/* <img src={this.props.image} /> */}
                 </div>
                 {modal}
