@@ -57,13 +57,13 @@ services:
     networks:
       - local-net
 
-  front:
+  front2:
     build:
       context: .
-      dockerfile: ./docker/front.Dockerfile
+      dockerfile: ./docker/front2.Dockerfile
     container_name: front2
     ports:
-      - 3000:3000
+      - 3001:3001
     command: sh -c "cd shop-front && yarn start"
     volumes:
     - ./front:/front/shop-front
