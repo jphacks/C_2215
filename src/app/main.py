@@ -25,6 +25,14 @@ def get_items(db: Session = Depends(get_db)):
     """
     return db.query(ItemsTable).all()
 
+@app.get("/items/{_id}")
+def get_item(db: Session = Depends(get_db)):
+    """
+    get all items
+    """
+    item = db.query(ItemsTable).filter(ItemsTable.photo_id == _id).first()
+    return {item.photo_per}
+
 # @app.get("/items/{_id}")
 # def get_item(_id: int):
 #     """

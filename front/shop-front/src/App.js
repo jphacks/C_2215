@@ -7,18 +7,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      baseURL:'http://geoapi.heartrails.com/api/json?method=searchByPostal&postal=0010010', //localhostのリンクに変えて欲しい
-      ary:[]
+      baseURL:'http://localhost:8080/items', //localhostのリンクに変えて欲しい
+      items:[]
+      //ary:[],
+      //str:""
       };
   }
 
     componentDidMount() {
       axios.get(this.state.baseURL).then((response) => {
         this.setState({
-          //ary:response.data
-          ary:88
-        })
-        console.log(this.state.ary);
+          items:response.data
+          //str:this.state.ary.join()
+          //ary:88
+        }
+        )
+        console.log(this.state.items);
       })
     };
 
@@ -76,7 +80,7 @@ class App extends React.Component {
       <div class="container">
         <Meter 
           id = {1}
-          percent = {this.state.ary}
+          percent = {this.state.items.photo_per}
         />
       {groopList.map((groopItem) => {
         return(
