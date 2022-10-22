@@ -1,6 +1,6 @@
 # Dish/Dining
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2022/08/JPHACKS2022_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
+[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2022/08/JPHACKS2022_ogp.jpg)](https://youtu.be/iZionMIAI0Y)
 
 ## 製品概要
 焼肉屋やなどで机の広範囲を使用する飲食店で、お客さん側の机の使用状況をカメラで把握することで料理の提供を効率化するアプリ
